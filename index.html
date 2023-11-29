@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!--bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__main">
+                <h1 class="header__main-logo">Todo</h1>
+                <ul class="header__main-list">
+                    <li><button class="header-item header-item--active" id="home">Home</button></li>
+                    <li><button class="header-item" id="completed">Completed</button></li>
+                    <li><button class="header-item" id="incomplete">Incomplete</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="home-section">
+            <div class="container">
+                <div class="home__main">
+                    <div class="home__main-create">
+                        <label for="task">Title</label><br />
+                        <input class="field" type="text" id="task" name="task" placeholder="Add the task..."><br />
+                        <button id="add-todo">Add</button>
+                    </div>
+                    <ul class="home__main-list" id="my-list">
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="completed-section">
+            <div class="container">
+                <div class="completed__main">
+                    <ul class="completed__main-list" id="completed-list">
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="incomplete-section">
+            <div class="container">
+                <div class="incomplete__main">
+                    <ul class="incomplete__main-list" id="incomplete-list">
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--................script...........-->
+    <script src="script.js"></script>
+</body>
+</html>

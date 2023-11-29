@@ -1,0 +1,33 @@
+
+.header{
+    width: 100%;
+    margin-top: 50px;
+        .header__main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            &-logo{
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: blue;
+            }
+            &-list{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 25px;
+                .header-item{
+                    border: none;
+                    background-color: transparent;
+                    font-size: 1rem;
+                    &--active{
+                        border-bottom: 5px solid blue;
+                    }
+                    &:hover{
+                        color: blue;
+                    }
+                }
+            }
+        }
+}

@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 24px;
+}
+
+body {
+  background-color: #EEF5FF;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  width: 100%;
+  margin-top: 50px;
+}
+.header .header__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__main-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: blue;
+}
+.header .header__main-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.header .header__main-list .header-item {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+}
+.header .header__main-list .header-item--active {
+  border-bottom: 5px solid blue;
+}
+.header .header__main-list .header-item:hover {
+  color: blue;
+}
+
+.home-section .home__main {
+  margin-top: 50px;
+}
+.home-section .home__main-create label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.home-section .home__main-create input, .home-section .home__main-create textarea {
+  font-size: 0.833rem;
+  margin-top: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 2px solid black;
+  background-color: transparent;
+}
+.home-section .home__main-create #add-todo {
+  background-color: transparent;
+  padding: 20px 70px;
+  font-size: 0.833rem;
+}
+.home-section .home__main-create #add-todo:hover {
+  background-color: blue;
+  color: white;
+  border: 2px solid blue;
+}
+.home-section .home__main-list .home-item {
+  margin-top: 20px;
+  position: relative;
+}
+.home-section .home__main-list .home-item__title {
+  padding: 0.75rem 1rem;
+  border: 2px solid black;
+}
+.home-section .home__main-list .home-item__icon {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(100%, -50%);
+}
+.home-section .home__main-list .home-item__icon .bi {
+  font-size: 32px;
+}
+
+.completed-section .completed__main {
+  margin-top: 50px;
+}
+.completed-section .completed__main-list .completed-item {
+  margin-top: 20px;
+  position: relative;
+}
+.completed-section .completed__main-list .completed-item__title {
+  padding: 0.75rem 1rem;
+  border: 2px solid black;
+}
+.completed-section .completed__main-list .completed-item__icon {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(100%, -50%);
+}
+.completed-section .completed__main-list .completed-item__icon .bi {
+  font-size: 32px;
+}
+
+.incomplete-section .incomplete__main {
+  margin-top: 50px;
+}
+.incomplete-section .incomplete__main-list .incomplete-item {
+  margin-top: 20px;
+  position: relative;
+}
+.incomplete-section .incomplete__main-list .incomplete-item__title {
+  padding: 0.75rem 1rem;
+  border: 2px solid black;
+}
+.incomplete-section .incomplete__main-list .incomplete-item__icon {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(100%, -50%);
+}
+.incomplete-section .incomplete__main-list .incomplete-item__icon .bi {
+  font-size: 32px;
+}
+
+/*# sourceMappingURL=styles.css.map */
