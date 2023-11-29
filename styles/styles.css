@@ -96,6 +96,9 @@ ul {
   left: 90%;
   transform: translate(100%, -50%);
 }
+.home-section .home__main-list .home-item__icon--highlight .bi {
+  color: green;
+}
 .home-section .home__main-list .home-item__icon .bi {
   font-size: 32px;
 }
@@ -119,6 +122,9 @@ ul {
 }
 .completed-section .completed__main-list .completed-item__icon .bi {
   font-size: 32px;
+}
+.completed-section .completed__main-list .completed-item__icon .bi--highlight {
+  color: green;
 }
 
 .incomplete-section .incomplete__main {

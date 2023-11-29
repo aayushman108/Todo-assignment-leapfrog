@@ -43,6 +43,11 @@
                     top: 50%;
                     left: 90%;
                     transform: translate(100%, -50%);
+                    &--highlight{
+                        .bi{
+                            color: green;
+                        }
+                    }
                     .bi{
                         font-size: 32px;
                     }

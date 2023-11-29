@@ -19,6 +19,9 @@
                     transform: translate(100%, -50%);
                     .bi{
                         font-size: 32px;
+                        &--highlight{
+                            color: green;
+                        }
                     }
                 }
             }

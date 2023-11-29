@@ -20,29 +20,48 @@ let sectionsArray = Array.from(sections);
 
 const todoArray = [];
 
-function completed(k){
-    let key = k.getAttribute("key");
+function completed(e){
+    const el = e.currentTarget;
+    console.log(el);
+    let key = el.getAttribute("data-key");
+    console.log(key);
+    if(el.classList.contains("home-item__icon--highlight")){
+        el.classList.remove("home-item__icon--highlight");
+    }else{
+        el.classList.add("home-item__icon--highlight");
+    }
+
     todoArray[key].isCompleted = !todoArray[key].isCompleted;
+    console.log("hellow", todoArray);
 }
 
-function handleClick(e){
-    if(taskField.value){
-        myList.innerHTML = "";
+function handleClick(e) {
+    if (taskField.value) {
         const todoItem = {
-            title : taskField.value,
-            isCompleted : false,
-        }
+            title: taskField.value,
+            isCompleted: false,
+        };
+
         todoArray.push(todoItem);
         console.log(todoArray);
         taskField.value = '';
-        todoArray.reverse().map((item, index) => 
-        myList.innerHTML += `<li class="home-item">
-                                <p class="home-item__title">${item.title}</p>
-                                <div class="home-item__icon">
-                                    <i class="bi bi-check-circle-fill" key=${index} onclick="completed(this)"></i>
-                                </div>
-                            </li>`)
 
+        myList.innerHTML = '';
+
+        todoArray.reverse().forEach((item, index) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('home-item');
+
+            listItem.innerHTML = `
+                <p class="home-item__title">${item.title}</p>
+                <div class="home-item__icon" data-key="${index}">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+            `;
+
+            listItem.querySelector('.home-item__icon').addEventListener('click', completed);
+            myList.appendChild(listItem);
+        });
     }
 }
 
@@ -53,6 +72,7 @@ function handleNavBtnClick(e){
     sectionsArray.forEach(section => section.style.display = "none");
 
     const id = e.target.id;
+    console.log(id);
     const activeEl = document.getElementsByClassName(`${id}-section`);
     const activeArr = Array.from(activeEl);
     activeArr[0].style.display = "block";
@@ -60,26 +80,34 @@ function handleNavBtnClick(e){
     completedList.innerHTML = "";
     incompleteList.innerHTML = "";
 
-    if(id === "completed-btn"){
+    if(id === "completed"){
             const filteredItem = todoArray.filter(item => item.isCompleted);
-            filteredItem.map((item, index) => 
-            completedList.innerHTML += `<li class="completed-item">
-                                <p class="completed-item__title">${item.title}</p>
-                                <div class="completed-item__icon">
-                                    <i class="bi bi-check-circle-fill" key=${item.title}></i>
-                                </div>
-                            </li>`)
+            
+
+            filteredItem.forEach((item) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('completed-item');
+                listItem.innerHTML = `<p class="completed-item__title">${item.title}</p>
+                                                     <div class="completed-item__icon">
+                                                         <i class="bi bi-check-circle-fill"></i>
+                                                     </div>`;
+                completedList.appendChild(listItem);
+            });                
 
     }
-    if(id === "incomplete-btn"){
+    if(id === "incomplete"){
+        console.log("Aaa")
         const filteredItem = todoArray.filter(item => !item.isCompleted);
-        filteredItem.map((item, index) => 
-         incompleteList.innerHTML += `<li class="incomplete-item">
-                                 <p class="incomplete-item__title">${item.title}</p>
-                                <div class="incomplete-item__icon">
-                                     <i class="bi bi-check-circle-fill" key=${item.title}></i>
-                                 </div>
-                             </li>`)
+        console.log(filteredItem);
+        filteredItem.forEach((item) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('incomplete-item');
+            listItem.innerHTML = `<p class="incomplete-item__title">${item.title}</p>
+                                 <div class="incomplete-item__icon">
+                                     <i class="bi bi-check-circle-fill"></i>
+                                 </div>`;
+            incompleteList.appendChild(listItem);
+        });
     }
 
 }
